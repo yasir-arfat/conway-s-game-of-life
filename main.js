@@ -2,8 +2,8 @@ var c = document.getElementById("can");
 var ctx = c.getContext("2d");
 
 var sum = 0;
-var n = 100; //numbers of box
-var r = 800 / n;
+var n = 150; //numbers of box
+var r = c.width / n;
 
 var ran = 0;
 var act1 = [],
@@ -59,13 +59,16 @@ function main() {
         act2[i][j] = 1;
       }
 
-      ctx.beginPath();
-      ctx.arc(j * r, i * r, r / 2.7, r, 0, 2 * Math.PI);
+      
 
       if (act1[i][j] == 1) {
-        ctx.fillStyle = "white";
+        ctx.beginPath();
+      ctx.arc(j * r, i * r, r / 2.7, r, 0, 2 * Math.PI);
+        ctx.fillStyle = "#53f293";
         ctx.fill();
       } else {
+        ctx.beginPath();
+      ctx.arc(j * r, i * r, r / 2.7, r, 0, 2 * Math.PI);
         ctx.fillStyle = "black";
         ctx.fill();
       }
